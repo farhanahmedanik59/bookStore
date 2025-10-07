@@ -8,7 +8,7 @@ const Books = () => {
   return (
     <div className="flex justify-center flex-col bg-white">
       <h1 className="text-3xl text-center p-6">Books</h1>
-      <div className="grid grid-cols-4 gap-3 justify-center ">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 mx-auto gap-3 justify-center ">
         <Suspense fallback={<h1>loading</h1>}>
           {data.map((singleBook) => (
             <Book singleBook={singleBook} key={singleBook.bookId}></Book>

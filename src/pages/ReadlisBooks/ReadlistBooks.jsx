@@ -10,8 +10,8 @@ const ReadlistBooks = ({ book }) => {
           <h1>{book.author}</h1>
           <div className="flex gap-2.5">
             <h1>Tag</h1>
-            <h1>{book.tags}</h1>
-            <h1>{book.yearOfPublishing}</h1>
+            <h1>{book.rating}</h1>
+            <h1>{book.totalPages}</h1>
           </div>
         </div>
       </div>

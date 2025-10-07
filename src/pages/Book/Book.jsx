@@ -6,14 +6,14 @@ const Book = ({ singleBook }) => {
   return (
     <Link to={`/bookDetails/${singleBook.bookId}`}>
       <div>
-        <div className="card bg-base-100 w-96 shadow-sm">
+        <div className="card bg-base-100  shadow-sm">
           <figure>
             <img src={singleBook.image} className="h-[400px] w-full" alt={singleBook.bookName} />
           </figure>
           <div className="card-body">
             <h2 className="card-title">
               {singleBook.bookName}
-              <div className="badge badge-secondary">NEW</div>
+              <div className="badge badge-secondary">{singleBook.totalPages}</div>
             </h2>
             <p>{singleBook.review}</p>
             <div className="card-actions justify-between">

@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData, useParams } from "react-router";
 import { addToLocalDb } from "../../Utility/AddLocalStorage";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+const MySwal = withReactContent(Swal);
 
 const BookDetails = () => {
+  const [wishlist, setWithList] = useState([]);
   const handleRead = (id) => {
     addToLocalDb(id);
+    MySwal.fire({
+      title: <p>Readed</p>,
+      didOpen: () => {
+        // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+        MySwal.showLoading();
+      },
+    }).then(() => {
+      return MySwal.fire(<p>Shorthand works too</p>);
+    });
   };
+
   const { id } = useParams();
   const bookId = parseInt(id);
   const allData = useLoaderData();

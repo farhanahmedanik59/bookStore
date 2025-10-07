@@ -11,7 +11,7 @@ const GetBookList = () => {
 const addToLocalDb = (id) => {
   const storedList = GetBookList();
   if (storedList.includes(id)) {
-    alert("fuck");
+    return;
   } else {
     storedList.push(id);
     const data = JSON.stringify(storedList);
